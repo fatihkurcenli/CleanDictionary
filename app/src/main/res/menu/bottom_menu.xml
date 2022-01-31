@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home_24_dp"
+        android:title="home" />
+    <item
+        android:id="@+id/searchFragment"
+        android:icon="@drawable/ic_search_24_dp"
+        android:title="search" />
+    <item
+        android:id="@+id/favoriteFragment"
+        android:icon="@drawable/ic_favorite_24_dp"
+        android:title="favorite" />
+    <item
+        android:id="@+id/pastTimeFragment"
+        android:icon="@drawable/ic_past_time_24_dp"
+        android:title="Past Time" />
+</menu>
