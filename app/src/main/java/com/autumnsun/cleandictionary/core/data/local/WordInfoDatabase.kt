@@ -3,6 +3,7 @@ package com.autumnsun.cleandictionary.core.data.local
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.autumnsun.cleandictionary.core.data.local.entity.WordEntity
 import com.autumnsun.cleandictionary.core.data.local.entity.WordInfoEntity
 
 /*
@@ -10,7 +11,7 @@ import com.autumnsun.cleandictionary.core.data.local.entity.WordInfoEntity
 */
 
 @Database(
-    entities = [WordInfoEntity::class],
+    entities = [WordEntity::class],
     version = 1
 )
 @TypeConverters(Converters::class)

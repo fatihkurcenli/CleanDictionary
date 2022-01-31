@@ -1,9 +1,9 @@
-package com.autumnsun.cleandictionary.feature_home.presentation
+package com.autumnsun.cleandictionary.feature_search.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.autumnsun.cleandictionary.core.util.Resource
-import com.autumnsun.cleandictionary.feature_home.domain.usecase.GetWordInfo
+import com.autumnsun.cleandictionary.feature_search.domain.usecase.GetWordInfo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -16,7 +16,7 @@ import javax.inject.Inject
 */
 
 @HiltViewModel
-class WordInfoViewModel @Inject constructor(
+class SearchViewModel @Inject constructor(
     private val getWordInfo: GetWordInfo
 ) : ViewModel() {
     private val _searchQuery = MutableStateFlow("")
@@ -25,7 +25,7 @@ class WordInfoViewModel @Inject constructor(
     private val _state = MutableStateFlow(WordInfoState())
     val state: StateFlow<WordInfoState> = _state
 
-    private val _eventFlow = MutableSharedFlow<UIEvent>()
+    private val _eventFlow = MutableSharedFlow<SearchUIEvent>()
     val eventFlow = _eventFlow.asSharedFlow()
 
     private var searchJob: Job? = null
@@ -50,7 +50,7 @@ class WordInfoViewModel @Inject constructor(
                                 isLoading = false
                             )
                             _eventFlow.emit(
-                                UIEvent.ShowSnackBar(
+                                SearchUIEvent.ShowSnackBar(
                                     result.message ?: "Unknown error"
                                 )
                             )
@@ -64,9 +64,5 @@ class WordInfoViewModel @Inject constructor(
                     }
                 }.launchIn(this)
         }
-    }
-
-    sealed class UIEvent {
-        data class ShowSnackBar(val message: String) : UIEvent()
     }
 }

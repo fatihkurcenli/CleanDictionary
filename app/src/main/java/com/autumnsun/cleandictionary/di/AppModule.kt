@@ -9,7 +9,7 @@ import com.autumnsun.cleandictionary.core.data.remote.DictionaryApi.Companion.BA
 import com.autumnsun.cleandictionary.core.data.repository.WordInfoRepositoryImpl
 import com.autumnsun.cleandictionary.core.util.GsonParser
 import com.autumnsun.cleandictionary.feature_home.domain.repository.WordInfoRepository
-import com.autumnsun.cleandictionary.feature_home.domain.usecase.GetWordInfo
+import com.autumnsun.cleandictionary.feature_search.domain.usecase.GetWordInfo
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
